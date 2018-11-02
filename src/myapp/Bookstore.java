@@ -67,7 +67,7 @@ public class Bookstore extends javax.swing.JFrame {
         panelBook.add(img_showbook, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 280, 390));
 
         btn_selectCounts.setFont(new java.awt.Font("Ekkamai Standard", 1, 24)); // NOI18N
-        btn_selectCounts.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+        btn_selectCounts.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         btn_selectCounts.setVerifyInputWhenFocusTarget(false);
         panelBook.add(btn_selectCounts, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 110, 40));
 
