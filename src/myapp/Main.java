@@ -7,7 +7,7 @@ public class Main {
      public static void main(String[] args) {
         JFrame frame = new JFrame();
         BookDB.Connect();
-        Bookstore form = new Bookstore();
+        BookStore form = new BookStore();
         frame.setContentPane(form);        
         frame.pack();
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);        
