@@ -16,8 +16,23 @@ public class Bookstore extends javax.swing.JPanel {
      */
     public Bookstore() {
         initComponents();
+        setBook();
     }
-
+    
+ public  void setBook(){
+     Books bkshow = BookDB.get("...");
+     if(bkshow!=null){
+     lbl_bookname.setText("ชื่อ "+bkshow.bookname);
+     lbl_authorname.setText("ผู้แต่ง "+bkshow.author);
+     lbl_booktype.setText("ประเภท "+bkshow.booktype);
+     lbl_bookprice.setText("ราคา "+Double.toString(bkshow.bookprice));
+     lbl_bookpublisher.setText("สำนักพิมพ์ "+bkshow.publisher);
+     lbl_bookyears.setText("ปี "+Double.toString(bkshow.year));
+     lbl_booklanguage.setText("ภาษา "+bkshow.language);
+     lbl_bookpagenumber.setText("จำนวนหน้า "+Double.toString(bkshow.countpage));   
+     }     
+     
+ }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
