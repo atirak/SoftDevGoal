@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BookStoreService {
     static ArrayList<Orders> orderlist = new ArrayList<Orders>();
 
-    public static void AddOrder(String name,double price,int amount){
+    public static void addOrder(String name,double price,int amount){
         boolean flag = true;
         int num=0;
         for(Orders order:orderlist){            
@@ -24,16 +24,18 @@ public class BookStoreService {
         
     }
     
-     public static void ResetList(){
+     public static void resetList(){
          orderlist.clear();
      }
      
-     public static int AmountBook(){
+     public static int amountBook(){
          int sum = 0;
           for(Orders order:orderlist){
               sum+=order.bookamount;
           }
           return sum;
      }
-    
+     public static Books getBook(String bookname){
+         return BookDB.get(bookname);
+     }
 }

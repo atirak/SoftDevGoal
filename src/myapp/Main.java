@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 public class Main {
      public static void main(String[] args) {
         JFrame frame = new JFrame();
-        BookDB.Connect();
+        BookDB.connect();
         Bookstore form = new Bookstore();
         frame.setContentPane(form);        
         frame.pack();

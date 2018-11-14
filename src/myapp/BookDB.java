@@ -29,10 +29,10 @@ public class BookDB {
     static DBCollection book;
     static DBCollection order;
     static DBObject dockBook;
+       
     
     
-    
-    public static void Connect(){
+    public static void connect(){
         try {
             uri = new MongoClientURI("mongodb://dbboat:boat1234@ds249623.mlab.com:49623/dbbookshop");
             mongo = new MongoClient(uri);
@@ -60,6 +60,7 @@ public class BookDB {
         add.put("countpage", countpage);
         book.insert(add);     
     }
+    
     public static void update(String bookname , String author , String booktype,
             Double bookprice,String publisher , Double year , String language ,
             Double countpage){
@@ -110,4 +111,5 @@ public class BookDB {
             }
         return bookList;      
     }
+    
 }

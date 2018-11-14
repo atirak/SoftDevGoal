@@ -16,11 +16,11 @@ public class Bookstore extends javax.swing.JPanel {
      */
     public Bookstore() {
         initComponents();
-        setBook();
+        
     }
     
- public  void setBook(){
-     Books bkshow = BookDB.get("...");
+ public  void setBook(String name){
+     Books bkshow = BookStoreService.getBook(name);
      if(bkshow!=null){
      lbl_bookname.setText("ชื่อ "+bkshow.bookname);
      lbl_authorname.setText("ผู้แต่ง "+bkshow.author);
@@ -219,6 +219,11 @@ public class Bookstore extends javax.swing.JPanel {
         btn_search_icon.setBorderPainted(false);
         btn_search_icon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_search_icon.setFocusable(false);
+        btn_search_icon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_search_iconActionPerformed(evt);
+            }
+        });
         btn_menubar.add(btn_search_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 40, 40));
 
         icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/myapp/images/img_searchbar.png"))); // NOI18N
@@ -252,11 +257,16 @@ public class Bookstore extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_searchMouseClicked
 
     private void btn_pickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pickActionPerformed
-       BookStoreService.AddOrder(lbl_bookname.getText(),
+       BookStoreService.addOrder(lbl_bookname.getText(),
                 Double.parseDouble(lbl_bookprice.getText()),
                 (Integer)btn_selectCounts.getValue());
-        btn_basket.setText(String.valueOf(BookStoreService.AmountBook()));
+        btn_basket.setText(String.valueOf(BookStoreService.amountBook()));
     }//GEN-LAST:event_btn_pickActionPerformed
+
+    private void btn_search_iconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search_iconActionPerformed
+        // TODO add your handling code here:
+        setBook(btn_search.getText());
+    }//GEN-LAST:event_btn_search_iconActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_allbook;
