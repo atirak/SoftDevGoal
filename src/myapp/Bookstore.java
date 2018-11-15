@@ -166,6 +166,11 @@ public class Bookstore extends javax.swing.JPanel {
         btn_allbook.setBorderPainted(false);
         btn_allbook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_allbook.setFocusable(false);
+        btn_allbook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_allbookActionPerformed(evt);
+            }
+        });
         btn_menubar.add(btn_allbook, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 160, 40));
 
         btn_home.setBackground(new java.awt.Color(204, 204, 255));
@@ -267,6 +272,12 @@ public class Bookstore extends javax.swing.JPanel {
         // TODO add your handling code here:
         setBook(btn_search.getText());
     }//GEN-LAST:event_btn_search_iconActionPerformed
+
+    private void btn_allbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_allbookActionPerformed
+        // TODO add your handling code here:
+        BookAll form = new BookAll();
+         Main.setFrame(form); 
+    }//GEN-LAST:event_btn_allbookActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_allbook;
