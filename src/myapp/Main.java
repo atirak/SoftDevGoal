@@ -8,8 +8,8 @@ public class Main {
     static JFrame frame;
      public static void main(String[] args) {
         frame = new JFrame();
-        BookDB.connect();
-        BookAll form = new BookAll();
+        BookDAO.connect();
+        AllBook form = new AllBook();
         setFrame(form);
         
     }

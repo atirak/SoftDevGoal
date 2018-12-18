@@ -13,14 +13,14 @@ public class Books {
     String bookname ;
     String author;
     String booktype;
-    Double bookprice;
+    int bookprice;
     String publisher;
-    Double year;
+    int year;
     String language;
-    Double countpage;
+    int countpage;
     
-    Books(String bookname , String author , String booktype,Double bookprice,
-            String publisher , Double year , String language ,Double countpage){
+    Books(String bookname , String author , String booktype,int bookprice,
+            String publisher , int year , String language ,int countpage){
         this.bookname = bookname;
         this.author = author;
         this.booktype = booktype;
